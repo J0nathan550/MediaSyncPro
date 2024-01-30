@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MediaSyncPro.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MediaSyncPro.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TitleColor="White"
+    Shell.ForegroundColor="White"
+    Shell.BackgroundColor="#121212"
+    FlyoutBackgroundColor="Black"
+    Title="MediaSync Pro">
+    <Shell.FlyoutHeader>
+        <Border StrokeThickness="1" Stroke="White" HeightRequest="50">
+            <Label Text="by J0nathan550" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Border>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <Border StrokeThickness="1" Stroke="White" HeightRequest="50">
+            <Label Text="by J0nathan550" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Border>
+    </Shell.FlyoutFooter>
+    <FlyoutItem Title="Download" FlyoutIcon="download_solid.png">
+        <ShellContent ContentTemplate="{DataTemplate local:DownloadPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Settings" FlyoutIcon="gear_solid.png">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Help" FlyoutIcon="circle_question_solid.png">
+        <ShellContent ContentTemplate="{DataTemplate local:HelpPage}"/>
+    </FlyoutItem>
+</Shell>
