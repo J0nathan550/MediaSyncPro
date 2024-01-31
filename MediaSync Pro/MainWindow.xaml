@@ -1,0 +1,20 @@
+﻿<Window x:Class="MediaSync_Pro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        ui:TitleBar.Background="Black"
+        ui:TitleBar.Foreground="White"
+        ui:TitleBar.InactiveBackground="Black"
+        ui:TitleBar.InactiveForeground="White"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ui:ThemeManager.IsThemeAware="True"
+        ui:ThemeManager.RequestedTheme="Dark"
+        Background="Black"
+        Title="MediaSync Pro" Height="450" Width="800">
+    <Grid>
+    </Grid>
+</Window>
