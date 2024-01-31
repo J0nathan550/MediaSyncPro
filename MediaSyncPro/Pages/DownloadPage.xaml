@@ -10,10 +10,10 @@
             <RowDefinition />
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="Black" BorderColor="White" Grid.Row="0" Margin="4">
+        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="Black" BorderColor="White" Grid.Row="0" Margin="3">
             <Entry x:Name="linkTextBox" TextColor="White" PlaceholderColor="DimGray" Placeholder="Type a link to Spotify playlist or song..."/>
         </Frame>
-        <Frame Grid.Row="1" Margin="4" BorderColor="White" BackgroundColor="Black">
+        <Frame Grid.Row="1" Margin="3" BorderColor="White" BackgroundColor="Black">
             <Grid>
                 <Label HorizontalOptions="Center" Text="Downloading tab"/>
                 <ScrollView Margin="0, 20, 0, 0">
@@ -22,6 +22,13 @@
                 </ScrollView>
             </Grid>
         </Frame>
-        <Button Grid.Row="2" Margin="4" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Start downloading..." Clicked="StartDownloadingButton_Clicked"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="startDownloadBtn" Grid.Column="0" Grid.Row="2" Margin="3" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Start downloading..." Clicked="StartDownloadingButton_Clicked"/>
+            <Button x:Name="cancelDownloadBtn" Grid.Column="1" Grid.Row="2" Margin="3" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Stop downloading..." Clicked="CancelDownloadingButton_Clicked"/>
+        </Grid>
     </Grid>
 </ContentPage>

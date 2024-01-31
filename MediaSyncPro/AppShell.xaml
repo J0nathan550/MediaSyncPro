@@ -12,7 +12,7 @@
     Title="MediaSync Pro">
     <Shell.FlyoutHeader>
         <Border StrokeThickness="1" Stroke="White" HeightRequest="50">
-            <Label Text="by J0nathan550" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="MediaSync Pro" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Border>
     </Shell.FlyoutHeader>
     <Shell.FlyoutFooter>

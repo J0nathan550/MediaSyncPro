@@ -19,7 +19,7 @@ namespace MediaSyncPro
                     IWindowInsetsController? wicController = Window.InsetsController;
 
 
-                    Window.SetDecorFitsSystemWindows(false);
+                    Window.SetDecorFitsSystemWindows(true);
                     Window.SetFlags(WindowManagerFlags.Fullscreen, WindowManagerFlags.Fullscreen);
 
                     if (wicController != null)
