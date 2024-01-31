@@ -5,23 +5,4 @@
     xmlns:maui="using:Microsoft.Maui"
     RequestedTheme="Dark"
     xmlns:local="using:MediaSyncPro.WinUI">
-    <!--<Application.Resources>
-
-        <DataTemplate x:Key="MauiAppTitleBarTemplate">
-            <Grid
-                Canvas.ZIndex="1" 
-                Background="Black"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Margin="0,0,0,0">
-                <TextBlock 
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    ForegroundColor="White"
-                    Text="Hello World" 
-                    FontWeight="Bold"/>
-            </Grid>
-        </DataTemplate>
-
-    </Application.Resources>-->
 </maui:MauiWinUIApplication>

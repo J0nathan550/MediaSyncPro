@@ -11,7 +11,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="Black" BorderColor="White" Grid.Row="0" Margin="3">
-            <Entry x:Name="linkTextBox" TextColor="White" PlaceholderColor="DimGray" Placeholder="Type a link to Spotify playlist or song..."/>
+            <Entry x:Name="linkTextBox" TextColor="White" PlaceholderColor="DimGray" Placeholder="Type a link to playlist or song..."/>
         </Frame>
         <Frame Grid.Row="1" Margin="3" BorderColor="White" BackgroundColor="Black">
             <Grid>

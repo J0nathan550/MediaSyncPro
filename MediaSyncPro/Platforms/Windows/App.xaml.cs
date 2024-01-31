@@ -8,7 +8,7 @@ namespace MediaSyncPro.WinUI
     {
         public App()
         {
-           InitializeComponent();
+            InitializeComponent();
             Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
             {
                 var nativeWindow = handler.PlatformView;

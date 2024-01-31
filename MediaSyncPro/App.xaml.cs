@@ -1,4 +1,6 @@
-﻿namespace MediaSyncPro
+﻿using MediaSyncPro.Classes;
+
+namespace MediaSyncPro
 {
     public partial class App : Application
     {
@@ -6,6 +8,7 @@
         {
             InitializeComponent();
             UserAppTheme = AppTheme.Dark;
+            SettingsClass.LoadSettings();
             MainPage = new AppShell();
         }
     }

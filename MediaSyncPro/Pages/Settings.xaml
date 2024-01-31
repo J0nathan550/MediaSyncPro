@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaSyncPro.Pages.Settings"
+             Background="Black"
+             Title="Settings">
+    <VerticalStackLayout>
+        <Frame BackgroundColor="Black" BorderColor="White" CornerRadius="6" Padding="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Margin="5,0,5,0" Text="Path to media:" TextColor="White" VerticalTextAlignment="Center"/>
+                <Entry x:Name="settingsPath" IsReadOnly="True" Grid.Column="1" PlaceholderColor="DimGray" Placeholder="Path of were the media will be installed..."/>
+                <Button Clicked="SettingsButtonPath_ClickedAsync" Margin="2" Grid.Column="2" Padding="0" Text="..." BackgroundColor="Black" TextColor="White" CornerRadius="0"/>
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
