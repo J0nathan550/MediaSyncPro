@@ -28,7 +28,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="startDownloadBtn" Grid.Column="0" Grid.Row="2" Margin="3" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Start downloading..." Clicked="StartDownloadingButton_Clicked"/>
-            <Button x:Name="cancelDownloadBtn" Grid.Column="1" Grid.Row="2" Margin="3" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Stop downloading..." Clicked="CancelDownloadingButton_Clicked"/>
+            <Button x:Name="cancelDownloadBtn" IsEnabled="False" Grid.Column="1" Grid.Row="2" Margin="3" BorderColor="White" BorderWidth="1" BackgroundColor="#050505" TextColor="White" Text="Stop downloading..." Clicked="CancelDownloadingButton_Clicked"/>
         </Grid>
     </Grid>
 </ContentPage>

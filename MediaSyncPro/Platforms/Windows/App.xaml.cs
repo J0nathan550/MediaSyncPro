@@ -1,32 +1,25 @@
-﻿using Microsoft.UI.Windowing;
-using Microsoft.UI;
-using Colors = Microsoft.UI.Colors;
+﻿using Microsoft.UI.Xaml;
+
+// To learn more about WinUI, the WinUI project structure,
+// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace MediaSyncPro.WinUI
 {
+    /// <summary>
+    /// Provides application-specific behavior to supplement the default Application class.
+    /// </summary>
     public partial class App : MauiWinUIApplication
     {
+        /// <summary>
+        /// Initializes the singleton application object.  This is the first line of authored code
+        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// </summary>
         public App()
         {
-            InitializeComponent();
-            Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
-            {
-                var nativeWindow = handler.PlatformView;
-                nativeWindow.Activate();
-                IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
-                WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
-                AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
-
-                //Make window button text white
-                appWindow.TitleBar.ButtonBackgroundColor = Colors.Black;
-                appWindow.TitleBar.ButtonHoverBackgroundColor = Colors.Gray;
-                appWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Black;
-                appWindow.TitleBar.ButtonHoverForegroundColor = Colors.White;
-                appWindow.TitleBar.ButtonPressedForegroundColor = Colors.White;
-                appWindow.TitleBar.ButtonForegroundColor = Colors.White;
-            });
+            this.InitializeComponent();
         }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
+
 }

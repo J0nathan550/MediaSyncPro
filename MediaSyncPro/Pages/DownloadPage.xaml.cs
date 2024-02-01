@@ -60,13 +60,13 @@ public partial class DownloadPage : ContentPage
                         PingReply reply = await ping.SendPingAsync("google.com");
                         if (reply == null || reply.Status != IPStatus.Success)
                         {
-                            cancelDownloadToken.Cancel();
+                            CancelDownload();
                         }
                         await Task.Delay(15000);
                     }
                     catch
                     {
-                        cancelDownloadToken.Cancel();
+                        CancelDownload();
                     }
                 }
             }); // ping internet to check for errors
