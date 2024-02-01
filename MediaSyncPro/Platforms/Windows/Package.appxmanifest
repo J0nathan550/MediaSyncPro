@@ -6,12 +6,12 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=J0nathan550" Version="1.0.0.0" />
+  <Identity Name="29953J0nathan550.37689339E9460" Publisher="CN=FAFA6ACD-16B6-47B2-9B64-3E72929F9DEB" Version="1.1.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="905E7EB8-CC3F-4914-ADAA-1F27E4E9F2A3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="c62ebc92-7878-4406-a42b-e348ec055899" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>$placeholder$</DisplayName>
+    <DisplayName>MediaSync Pro</DisplayName>
     <PublisherDisplayName>J0nathan550</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
   </Properties>

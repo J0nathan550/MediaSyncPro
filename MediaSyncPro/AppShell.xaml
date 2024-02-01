@@ -13,10 +13,7 @@
     Title="MediaSync Pro">
     <Shell.FlyoutHeader>
         <Frame CornerRadius="6" BorderColor="White" BackgroundColor="Black" HeightRequest="80" Padding="0">
-            <VerticalStackLayout>
-                <Image Source="cloud_icon.png" WidthRequest="50" HeightRequest="50"/>
                 <Label Text="MediaSync Pro" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </VerticalStackLayout>
         </Frame>
     </Shell.FlyoutHeader>
     <Shell.FlyoutFooter>
