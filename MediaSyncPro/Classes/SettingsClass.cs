@@ -6,12 +6,17 @@ namespace MediaSyncPro.Classes
     {
         public static SettingsClass? settingsClass = new();
         public string SavePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + @"\MediaSync Pro";
+        public string SaveSettingsPath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\J0nathan550" + @"\MediaSync Pro";
         public static void LoadSettings()
         {
             settingsClass = new SettingsClass();
-            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "save.json"))
+            if (!Directory.Exists(settingsClass.SaveSettingsPath))
             {
-                string json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "save.json");
+                Directory.CreateDirectory(settingsClass.SaveSettingsPath);
+            }
+            if (File.Exists(Path.Combine(settingsClass.SaveSettingsPath, "save.json")))
+            {
+                string json = File.ReadAllText(Path.Combine(settingsClass.SaveSettingsPath, "save.json"));
                 settingsClass = JsonSerializer.Deserialize<SettingsClass>(json);
             }
             else
@@ -36,8 +41,9 @@ namespace MediaSyncPro.Classes
         }
         public static void SaveSettings()
         {
+            settingsClass ??= new SettingsClass();
             string json = JsonSerializer.Serialize(settingsClass);
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "save.json", json);
+            File.WriteAllText(Path.Combine(settingsClass.SaveSettingsPath, "save.json"), json);
         }
     }
 }
