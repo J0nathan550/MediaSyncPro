@@ -17,5 +17,6 @@
                 <Button Clicked="SettingsButtonPath_ClickedAsync" Margin="2" Grid.Column="2" Padding="0" Text="..." BackgroundColor="Black" TextColor="White" CornerRadius="0"/>
             </Grid>
         </Frame>
+        <Label Text="Occasionally, media files installed through our application may fail to install due to internet issues or content unavailability on platforms like YouTube or Spotify. If audio or video is missing from a playlist, attempt to reinstall it using the provided link; sometimes this resolves the issue. If not, regrettably, the content may not be available on those services for unknown reasons." HorizontalOptions="Center" FontAttributes="Bold" TextColor="Yellow"/>
     </VerticalStackLayout>
 </ContentPage>
