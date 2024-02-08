@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using MediaSyncPro.Classes;
 using SpotifyExplode;
 using SpotifyExplode.Tracks;
 using System.Diagnostics;
@@ -16,6 +17,8 @@ public partial class DownloadPage : ContentPage
     public DownloadPage()
     {
         InitializeComponent();
+        SettingsClass.settingsClass = new();
+        SettingsClass.LoadSettings();
     }
 
     private CancellationTokenSource? cancelDownloadToken;
@@ -167,7 +170,12 @@ public partial class DownloadPage : ContentPage
                             {
                                 downloadInformationStackLayout.Children.Add(new Label() { Text = $"Download started for: {track.Title}, NOTE: Videos or Audio from YouTube or Spotify can sometimes not install, due internet issues, or 'missing' in the YouTube or Spotify for some reason." });
                             });
-                            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "/MediaSync Pro";
+                            if (SettingsClass.settingsClass == null)
+                            {
+                                SettingsClass.settingsClass = new();
+                                SettingsClass.LoadSettings();
+                            }
+                            string path = SettingsClass.settingsClass.SavePath;
                             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
                             var streamManifest = await youtubeClient.Videos.Streams.GetManifestAsync("https://youtube.com/watch?v=" + youTubeID, token);
                             var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
@@ -233,8 +241,6 @@ public partial class DownloadPage : ContentPage
     {
         try
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "/MediaSync Pro";
-            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
             int completed = 0, failed = 0; 
             foreach (var video in videos)
             {
@@ -247,7 +253,12 @@ public partial class DownloadPage : ContentPage
                         {
                             downloadInformationStackLayout.Children.Add(new Label() { Text = $"Download started for: {video.Title}, NOTE: Videos or Audio from YouTube or Spotify can sometimes not install, due internet issues, or 'missing' in the YouTube or Spotify for some reason." });
                         });
-                        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "/MediaSync Pro";
+                        if (SettingsClass.settingsClass == null)
+                        {
+                            SettingsClass.settingsClass = new();
+                            SettingsClass.LoadSettings();
+                        }
+                        string path = SettingsClass.settingsClass.SavePath;
                         if (!Directory.Exists(path)) Directory.CreateDirectory(path);
                         var streamManifest = await youtubeClient.Videos.Streams.GetManifestAsync("https://youtube.com/watch?v=" + video.Id, token);
                         var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
@@ -304,8 +315,6 @@ public partial class DownloadPage : ContentPage
     {
         try // no youtube playlist? maybe a video?
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "/MediaSync Pro";
-            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
             int completed = 0, failed = 0; 
             Task task = Task.Run(async () =>
             {
@@ -316,7 +325,12 @@ public partial class DownloadPage : ContentPage
                     {
                         downloadInformationStackLayout.Children.Add(new Label() { Text = $"Download started for: {video.Title}, NOTE: Videos or Audio from YouTube or Spotify can sometimes not install, due internet issues, or 'missing' in the YouTube or Spotify for some reason." });
                     });
-                    string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "/MediaSync Pro";
+                    if (SettingsClass.settingsClass == null)
+                    {
+                        SettingsClass.settingsClass = new();
+                        SettingsClass.LoadSettings();
+                    }
+                    string path = SettingsClass.settingsClass.SavePath;
                     if (!Directory.Exists(path)) Directory.CreateDirectory(path);
                     var streamManifest = await youtubeClient.Videos.Streams.GetManifestAsync("https://youtube.com/watch?v=" + video.Id);
                     var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();

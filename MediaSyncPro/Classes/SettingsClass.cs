@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace MediaSyncPro.Classes
 {
@@ -6,7 +7,7 @@ namespace MediaSyncPro.Classes
     {
         public static SettingsClass? settingsClass = new();
         public string SavePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + @"\MediaSync Pro";
-        public string SaveSettingsPath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\J0nathan550" + @"\MediaSync Pro";
+        [JsonIgnore] public string SaveSettingsPath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\J0nathan550" + @"\MediaSync Pro";
         public static void LoadSettings()
         {
             settingsClass = new SettingsClass();
